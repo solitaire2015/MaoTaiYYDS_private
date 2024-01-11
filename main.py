@@ -52,6 +52,7 @@ for section in configs.sections():
     process.init_headers(user_id=userId, token=token, lng=lng, lat=lat)
     # 根据配置中，要预约的商品ID，城市 进行自动预约
     try:
+        logging.info('try to search items:{}'.format(config.ITEM_CODES))
         for item in config.ITEM_CODES:
             max_shop_id = process.get_location_count(province=province,
                                                      city=city,
